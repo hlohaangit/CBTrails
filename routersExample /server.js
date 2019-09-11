@@ -1,9 +1,9 @@
-const srv= require("express");
+const srv= require("express")();
 
 const teachRoute= require("./routes/teacher");
 const studentRoute= require("./routes/student");
 
-srv.use('/students', studentRoute);
+srv.use('/student', studentRoute);
 
 srv.use('/teacher', teachRoute);
 

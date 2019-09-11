@@ -1,6 +1,4 @@
-const express = require('express');
-const router = express.Router();
-const route=router();
+const route= require('express').Router();
 
 let students=[
     {name:"arsh",clg: "TU", year: "I"},
@@ -11,6 +9,15 @@ let students=[
 
 route.get('/',(req,res)=>{
     res.send(students)
+})
+
+route.post('/',(req,res)=>{
+    students.push({
+        name: req.body.name,
+        clg: req.body.clg,
+        year: req.body.year
+    })
+    res.send(students);
 })
 route.get('/:id',(req,res)=>{
     res.send(student[req.params.id])
